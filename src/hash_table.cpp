@@ -2,9 +2,25 @@
 #include "symbol.h"
 #include <string.h>
 #include <iostream>
+#include <typeinfo>
+
+#include <Int.h>
+#include <Field.h>
+#include <Reference.h>
+
+#include <iostream>
+using namespace std;
+
 
 hash_table::hash_table()
 {
+    this->numSymbols = 0;
+    //ctor
+}
+
+hash_table::hash_table(std::string name)
+{
+    this->name = name;
     this->numSymbols = 0;
     //ctor
 }
@@ -16,19 +32,16 @@ hash_table::~hash_table()
 
 void hash_table::add(symbol* symb)
 {
-
     int i;
     symbol *p;
 
     i=this->mkkey((symb->getName().c_str()));
-    std::cout<<"IIIIIIIIII->"<<i<<"\n";
+    this->ids[numSymbols] = symb;
     p=this->arr[i];
     symb->NextSymbol=p;
     symb->PrevSymbol=NULL;
     if(p) p->PrevSymbol=symb;
     this->arr[i]=symb;
-
-
     numSymbols++;
 
 
@@ -53,12 +66,72 @@ void hash_table::discard(std::string name)
 
         symbp->PrevSymbol = NULL;
         symbp->NextSymbol = NULL;
+        delete symbp;
 
     }
 
 
 }
 
+void hash_table::clone(hash_table * hs){
+
+ for(int i =0; i<hs->numSymbols; i++){
+
+
+    if(hs->ids[i]->className() == "Field")
+    {
+
+        Field* cx = new Field((Field *) hs->ids[i]);
+
+        this->add(cx);
+
+    }
+
+
+ }
+
+}
+
+hash_table::hash_table(hash_table* hs){
+
+ //printf(">>>>%d\n",hs->numSymbols);
+ this->numSymbols = 0;
+
+ for(int i =0; i<hs->numSymbols; i++){
+
+
+    if(hs->ids[i]->className() == "Field")
+    {
+        Field* cx = new Field((Field *) hs->ids[i]);
+
+        this->add(cx);
+
+    }
+
+     /*
+    else if(hs->ids[i]->className() == "symbol")
+    {
+        symbol* cx = (symbol*)hs->ids[i];
+        this->add(new symbol(cx));
+
+    }
+
+    else if(hs->ids[i]->get_data()->className() == "Reference")
+    {
+        Reference* cx = (Reference*)hs->ids[i];
+        this->add(new Reference(cx));
+
+    }*/
+
+ }
+
+}
+
+std::string hash_table::getName(){
+
+return this->name;
+
+}
 
 symbol* hash_table::lookfor(std::string name)
 {

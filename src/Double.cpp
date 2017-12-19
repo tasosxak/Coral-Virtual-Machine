@@ -10,7 +10,13 @@ Double::~Double()
     //dtor
 }
 
+Double::Double(Double* symb){
 
+  //this->name = symb->getName();
+  this->linecode = symb->getLine();
+  setValue(symb->getValue());
+
+}
 
 Double::Double(double value)
 {
@@ -28,10 +34,22 @@ void Double::setValue(double value){
 }
 
 
+std::string Double::className(){
+
+    return "Double";
+
+}
 
 
-Double::Double(const std::string& name, double value):symbol(name){
+
+Double::Double(const std::string& name, double value):Decimal(name){
 
     this->value = value;
+
+}
+
+std::string Double::print(){
+
+ return std::to_string(value);
 
 }

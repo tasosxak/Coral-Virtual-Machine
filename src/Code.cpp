@@ -17,6 +17,13 @@ std::string Code::getCode(){
     return this->code;
 
 }
+
+std::string Code::className(){
+
+    return "Code";
+
+}
+
 Code::~Code()
 {
     //dtor

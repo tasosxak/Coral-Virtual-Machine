@@ -1,20 +1,18 @@
 #ifndef INTEGER_H
 #define INTEGER_H
-#include "symbol.h"
+#include "Numeric.h"
 
-class Integer : public symbol
+class Integer : public Numeric
 {
     public:
         Integer();
+        Integer(std::string name);
         virtual ~Integer();
-        Integer(int value);
-        Integer(const std::string& name,int value);
-        int getValue();
-        void setValue(int value);
+
     protected:
 
     private:
-        int value;
+
 };
 
 #endif // INTEGER_H

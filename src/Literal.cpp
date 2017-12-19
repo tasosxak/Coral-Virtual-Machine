@@ -28,7 +28,17 @@ std::string Literal::getValue(){
     return this->value;
 }
 
+std::string Literal::className(){
+
+    return "Literal";
+}
+
 void Literal::setValue(const std::string& value){
 
    this->value = value;
 }
+
+ std::string Literal::print(){
+
+    return value;
+ }

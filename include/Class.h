@@ -1,20 +1,28 @@
 #ifndef CLASS_H
 #define CLASS_H
 
-#include <symbol.h>
+#include <Accessible.h>
 #include <Object.h>
 
+class Object;
 
-class Class : public symbol,Object
+class Class : public Accessible
 {
     public:
         Class();
-        Class(std::string name);
+        Class(std::string name, std::string ACC_FLAG,Class* supercl);
+        Class(Class* obj);
         virtual ~Class();
+        std::string className();
+        Object* createInstance();
+        Class* getSuperClass();
+        void setSuperClass(Class* supercl);
 
     protected:
 
+
     private:
+        Class* superclass;
 
 
 };

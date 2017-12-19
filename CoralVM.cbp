@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CoralVM" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/CoralVM" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="C:/Users/User/Desktop/CoralVM/include" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/CoralVM" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="include/Accessible.h" />
+		<Unit filename="include/Allocated_Object.h" />
+		<Unit filename="include/CVM.h" />
+		<Unit filename="include/Class.h" />
+		<Unit filename="include/Code.h" />
+		<Unit filename="include/Data_Type.h" />
+		<Unit filename="include/Decimal.h" />
+		<Unit filename="include/Double.h" />
+		<Unit filename="include/Field.h" />
+		<Unit filename="include/Heap.h" />
+		<Unit filename="include/Int.h" />
+		<Unit filename="include/Integer.h" />
+		<Unit filename="include/Literal.h" />
+		<Unit filename="include/Memory_Manager.h" />
+		<Unit filename="include/Method.h" />
+		<Unit filename="include/Numeric.h" />
+		<Unit filename="include/Object.h" />
+		<Unit filename="include/Primitive.h" />
+		<Unit filename="include/Reference.h" />
+		<Unit filename="include/System.h" />
+		<Unit filename="include/hash_table.h" />
+		<Unit filename="include/symbol.h" />
+		<Unit filename="include/vs_stack.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Accessible.cpp" />
+		<Unit filename="src/Allocated_Object.cpp" />
+		<Unit filename="src/CVM.cpp" />
+		<Unit filename="src/Class.cpp" />
+		<Unit filename="src/Code.cpp" />
+		<Unit filename="src/Data_Type.cpp" />
+		<Unit filename="src/Decimal.cpp" />
+		<Unit filename="src/Double.cpp" />
+		<Unit filename="src/Field.cpp" />
+		<Unit filename="src/Heap.cpp" />
+		<Unit filename="src/Int.cpp" />
+		<Unit filename="src/Integer.cpp" />
+		<Unit filename="src/Literal.cpp" />
+		<Unit filename="src/Memory_Manager.cpp" />
+		<Unit filename="src/Method.cpp" />
+		<Unit filename="src/Numeric.cpp" />
+		<Unit filename="src/Object.cpp" />
+		<Unit filename="src/Primitive.cpp" />
+		<Unit filename="src/Reference.cpp" />
+		<Unit filename="src/System.cpp" />
+		<Unit filename="src/hash_table.cpp" />
+		<Unit filename="src/symbol.cpp" />
+		<Unit filename="src/vs_stack.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

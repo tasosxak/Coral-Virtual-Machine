@@ -12,7 +12,9 @@ class Literal : public symbol
         Literal(const std::string& name, const std::string& value);
         virtual ~Literal();
         std::string getValue();
+        std::string className();
         void setValue(const std::string& value);
+        std::string print();
     protected:
 
     private:

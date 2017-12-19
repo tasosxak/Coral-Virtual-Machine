@@ -8,6 +8,7 @@ class Code: public symbol
         Code();
         Code(const std::string& code);
         virtual ~Code();
+        std::string className();
         std::string getCode();
     protected:
 
