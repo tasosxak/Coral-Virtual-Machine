@@ -1,0 +1,97 @@
+public class Entity extends NULL:
+	protected I name;
+
+	public V init(R);
+		sconst "Constructor Entity"
+		print
+		rload_ 1
+		iconst 555
+		putfield name
+		iconst 0
+		iconst 1
+		ret
+
+	public I equals(R,R);
+		rload_ 2
+		getfield name
+		rload_ 1
+		getfield name
+		icmp
+		ifeq equal notequal
+		equal:
+		iconst 0
+		jmp end
+		notequal:
+		iconst -1
+		end:
+		iconst 2
+		ret
+
+	public V toString(R);
+		sconst "Entity"
+		print
+		rload_ 1
+		getfield name
+		print
+		iconst 0
+		iconst 1
+		ret
+
+endclass
+
+
+abstract class Person extends Entity:
+	public I age;
+
+	public V init(I,R);
+		rload_ 1
+		print
+		rload_ 2
+		invoke_special Entity init
+		pop
+		sconst "Constructor Person"
+		print
+		rload_ 2
+		iload_ 1
+		putfield age
+		iconst 0
+		iconst 2
+		ret
+
+	private V toString(R);
+		sconst "Person"
+		print
+		rload_ 1
+		getfield name
+		print
+		rload_ 1
+		getfield age
+		print
+		iconst 0
+		iconst 1
+		ret
+
+endclass
+
+Person pr = NULL;
+
+V main();
+	new Person
+	dup 2
+	iconst 14
+	invoke_virtual Person init
+	pop
+	rstore pr
+	rload pr
+	getfield name
+	print
+	rload pr
+	invoke_virtual Person toString
+	pop
+	iconst 0	
+	iconst 0
+	ret
+
+
+invoke_static main
+pop
