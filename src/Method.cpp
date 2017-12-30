@@ -1,6 +1,6 @@
 #include "Method.h"
 
-Method::Method(std::string name,std::string ACC_FLAG, std::string RTYPE):Accessible(name,ACC_FLAG)
+Method::Method(std::string name,std::string ACC_FLAG, std::string RTYPE):Object(name),Accessible(ACC_FLAG)
 {
 
     set_rtype(RTYPE);

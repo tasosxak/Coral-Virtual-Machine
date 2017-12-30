@@ -6,7 +6,7 @@
 
 class Object;
 
-class Class : public Accessible
+class Class : public Object , public Accessible
 {
     public:
         Class();

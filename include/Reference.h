@@ -5,7 +5,7 @@
 #include "Numeric.h"
 #include "Class.h"
 
-class Reference: public Numeric
+class Reference: public Data_Type
 {
     public:
 
@@ -28,10 +28,11 @@ class Reference: public Numeric
 
 
     protected:
-
-    private:
         Class  *classRef;
         Object *pointer;
+
+    private:
+
 };
 
 #endif // REFERENCE_H

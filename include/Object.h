@@ -2,23 +2,28 @@
 #define OBJECT_H
 
 #include <symbol.h>
-#include <Class.h>
+//#include <Class.h>
 
-class Class;
+//class Class;
 
 class Object : public symbol
 {
     public:
         Object();
+        Object(std::string name);
         virtual ~Object();
 
-        Class* getClass();
-        void setClass(Class* classRef);
+        virtual Object*  getClass();
+        //virtual bool equals(Object* obj);
+        virtual std::string toString();
+        void setClass(Object* classRef);
 
     protected:
+        std::string object_id;
+
 
     private:
-        Class* classRef;
+        Object* classRef;
 };
 
 #endif // OBJECT_H

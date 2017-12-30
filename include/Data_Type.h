@@ -2,9 +2,9 @@
 #define DATA_TYPE_H
 
 #include <symbol.h>
+#include <Object.h>
 
-
-class Data_Type : public symbol
+class Data_Type : public Object
 {
     public:
         Data_Type();

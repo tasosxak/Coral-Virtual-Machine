@@ -23,6 +23,9 @@
 #include "hash_table.h"
 #include "Class.h"
 #include "Reference.h"
+#include "Array.h"
+#include "IntArray.h"
+#include "ArrayReference.h"
 
 #define COMPILATION 0
 #define EXECUTION 0
@@ -224,6 +227,10 @@ int CVM::compile()
             {
                 cur_hs->add(new Field(tokens[3],tokens[1], new Double(0.0)));
             }
+            else if ( tokens[2] == "I[") //=== Array of integers Field of a class
+            {
+                cur_hs->add(new Field(tokens[3],tokens[1], new ArrayReference(tokens[3],NULL,NULL,1)));
+            }
             else //=== Reference Field of a class
             {
                 Class* y;
@@ -243,7 +250,7 @@ int CVM::compile()
                 }
 
 
-                //  cur_hs->add(new Field(tokens[2],tokens[1],new Reference(tokens[2], x)));
+                  cur_hs->add(new Field(tokens[3],tokens[1],new Reference(tokens[3],y,  x)));
 
             }
 
@@ -259,6 +266,10 @@ int CVM::compile()
             else if ( tokens[1] == "D")
             {
                 cur_hs->add(new Field(tokens[2],"public", new Double(stod(tokens[3]))));
+            }
+            else if ( tokens[2] == "I[") //=== Array of integers Field of a class
+            {
+                cur_hs->add(new Field(tokens[2],"public", new ArrayReference(tokens[2],NULL,NULL,1)));
             }
             else
             {
@@ -403,6 +414,21 @@ int CVM::execute()
             s = cur_hs->lookfor(p1);
 
             ((Reference*)((Field*) s)->get_data())->setPointer((Object*)st.pop());
+
+        }
+         else if( p == "iastore" )
+
+        {
+            //arrayref
+            //index
+            //value
+
+            // iastore
+            Int* value = (Int*)st.pop();
+            int index = ((Int*)st.pop())->getValue();
+            Array* ar = (Array*) st.pop();
+
+            ar->set_element(index,value);
 
         }
         else if( p == "istore_" )
@@ -617,6 +643,23 @@ int CVM::execute()
             {
                 st.push(  ( (Object*)( ((Reference*)(((Field*)s)->get_data()))->getPointer() ) )  );
             }
+
+        }
+        else if(p == "iaload")
+        {
+            //arrayref
+            //index
+
+            // aload
+
+            Array* arrayref;
+            int index;
+
+            index = ((Int*) st.pop())->getValue();
+            arrayref = (Array*) st.pop();
+
+            st.push(new Int(((Int*)arrayref->get_element(index))->getValue()));
+
 
         }
         else if(p == "iconst")
@@ -946,7 +989,7 @@ int CVM::execute()
                 }
 
                 x = y->createInstance();
-                x->setClass(y);
+                //x->setClass(y);
 
 
             }
@@ -1061,7 +1104,7 @@ int CVM::execute()
             // Returned object
             // val
 
-            Class* superclass = (Class*) ((Object*)st.see(st.esp()))->getClass()->getSuperClass();
+            Class* superclass = (Class*) ((Class*)((Object*)st.see(st.esp()))->getClass())->getSuperClass();
 
             do
             {
@@ -1175,63 +1218,11 @@ int CVM::execute()
             ic = x->getLine(); //jumps to function
 
             continue;
-        }/*
-        else if( p == "call")
-        {
-            //call obj _method:
-            //call obj obj2 ... method_name
-            p1 = tokens[tokens.size() - 1];
-
-            for(int i=1; i< tokens.size()-1; i++)
-            {
-                //cout<<"MPIKA!"<<endl;
-                //cout<<"X"<<endl;
-                //cout<<tokens[i]<<endl;
-                Reference* x = (Reference *) (((Field*) cur_hs->lookfor(tokens[i]))->get_data());
-                // cout<<x->getName();
-                //cout<<x;
-                //cout<<"k"<<endl;
-                if(x == NULL)
-                {
-
-                    cout<<"Object doensn't define in current hs\n";
-                    break;
-                }
-
-                Object* c = (Object *)((x)->getPointer());
-                hts.push(cur_hs);
-                if(i == 1) hts.push(new hash_table("*"));
-//                cout<<(c->get
-                cur_hs = (c->getClass())->mht;
-
-
-            }
-
-            if(tokens.size() == 2)
-            {
-                hts.push(cur_hs);
-                hts.push(nsnew hash_table("*"));
-            }
-
-            //Push line of next instruction after call
-            //cout<<ic;
-            st.push(new Int(ic + 1));
-
-            // push ebp & ebp = esp
-            st.push(new Int(ebp));
-            ebp = st.esp();
-
-            // cout<<"CALL: "<<ic+1<<endl;
-            //cout<<cur_hs->lookfor(p1)<<endl;
-            ic = ((symbol *)cur_hs->lookfor(p1))->getLine();
-
-            continue;
-        }*/
+        }
         else if(p == "print")
         {
 
-            s = (symbol *)st.pop();
-            cout<<s->print();
+            cout<<((Object*)st.pop())->toString();
 
         }
         else if(p == "read")
@@ -1297,7 +1288,7 @@ int CVM::execute()
             //putfield fieldname
 
             p1 = tokens[1];
-            symbol* value = (symbol*) st.pop();
+            Object* value = (Object*) st.pop();
             Object* x = (Object*)st.pop();
 
             if(x != NULL)
@@ -1563,30 +1554,58 @@ int CVM::execute()
 
 
         }
+        else if( p == "newarray"){
+
+            //length
+
+            Array* ar;
+            p = tokens[1];
+
+
+            int length = ((Int*)st.pop())->getValue();
+
+            if( p == "I")
+            {
+
+                ar = new IntArray(length,1);
+            }
+            else if ( p == "D")
+            {
+                //For double;
+            }
+            else
+            {
+                Class* y;
+                Object* x;
+
+                y = (Class *)class_defs.lookfor(p);
+
+                if( y!= NULL)
+                {
+
+                    //For other classes;
+                }
+                else
+                {
+
+                    // Exception(ClassNotFound);
+                }
+
+
+            }
+
+            st.push(ar);
+        }
+
+
+
+
+
+
+
 
         /*
 
-                else if(p == "print")
-                {
-
-                    p1 = tokens[1];
-
-                    if(p1 == "i")
-                    {
-                        printf("%d",((Integer *)st.pop())->getValue());
-                    }
-                    else if(p1 == "d")
-                    {
-
-                       printf("%lf",((Double *)st.pop())->getValue());
-                    }
-                    else if(p1 == "s")
-                    {
-                        cout<<((Literal *)st.pop())->getValue();
-                    }
-
-
-                }
                  else if(p == "read")
                 {
 
@@ -1628,8 +1647,8 @@ int CVM::execute()
             */
 
         ic++;
-    }
 
+    }
 
 }
 

@@ -8,7 +8,7 @@ class Primitive : public Data_Type
 {
     public:
         Primitive();
-        Primitive(std::string name);
+        //Primitive(std::string name);
         virtual ~Primitive();
 
     protected:

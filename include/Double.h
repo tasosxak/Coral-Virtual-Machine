@@ -6,14 +6,17 @@ class Double : public Decimal
 {
     public:
         Double();
-        virtual ~Double();
         Double(double value);
         Double(Double* symb);
-        Double(const std::string& name,double value);
+
+        virtual ~Double();
+
+        //Double(const std::string& name,double value);
         std::string className();
         double getValue();
+
         void setValue(double value);
-        std::string print();
+        std::string toString();
 
     protected:
 

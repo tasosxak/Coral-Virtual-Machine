@@ -5,7 +5,7 @@ Class::Class()
     //ctor
 }
 
-Class::Class(std::string name,std::string ACC_FLAG,Class* supercl): Accessible(name,ACC_FLAG){
+Class::Class(std::string name,std::string ACC_FLAG,Class* supercl):Object(name),Accessible(ACC_FLAG){
 
 this->superclass = supercl;
 
@@ -26,6 +26,7 @@ Object* Class::createInstance(){
 
     Object* x = new Object();
     x->mht = new hash_table(this->mht);
+    x->setClass(this);
 
     //Copy the fields of superclasses
 

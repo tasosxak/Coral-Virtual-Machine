@@ -41,16 +41,17 @@ std::string Float::className(){
 
 }
 
-
+/*
 
 Float::Float(const std::string& name, float value):Decimal(name){
 
     this->value = value;
 
-}
+}*/
 
-std::string Float::print(){
+std::string Float::toString(){
 
  return std::to_string(value);
 
 }
+

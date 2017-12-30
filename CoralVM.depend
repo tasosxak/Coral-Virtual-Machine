@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1513455693 source:c:\users\user\desktop\coralvm\main.cpp
+1514673253 source:c:\users\user\desktop\coralvm\main.cpp
 	"CVM.h"
 
-1511107506 source:c:\users\user\desktop\coralvm\src\symbol.cpp
+1514659444 source:c:\users\user\desktop\coralvm\src\symbol.cpp
 	"symbol.h"
 	<string.h>
 	<iostream>
 	<typeinfo>
 
-1511106799 c:\users\user\desktop\coralvm\include\symbol.h
+1514659444 c:\users\user\desktop\coralvm\include\symbol.h
 	<string>
 	"hash_table.h"
 
@@ -25,7 +25,7 @@
 	<string>
 	"symbol.h"
 
-1513550478 source:c:\users\user\desktop\coralvm\src\hash_table.cpp
+1514657151 source:c:\users\user\desktop\coralvm\src\hash_table.cpp
 	"hash_table.h"
 	"symbol.h"
 	<string.h>
@@ -39,48 +39,47 @@
 1513547978 c:\users\user\desktop\coralvm\include\hash_table.h
 	"symbol.h"
 
-1510713046 source:c:\users\user\desktop\coralvm\src\integer.cpp
+1514657380 source:c:\users\user\desktop\coralvm\src\integer.cpp
 	"Integer.h"
 
-1510713046 c:\users\user\desktop\coralvm\include\integer.h
+1514657381 c:\users\user\desktop\coralvm\include\integer.h
 	"Numeric.h"
 
-1513033341 c:\users\user\desktop\coralvm\include\literal.h
+1514660112 c:\users\user\desktop\coralvm\include\literal.h
 	<string>
-	"symbol.h"
+	"Data_Type.h"
 
-1513033368 source:c:\users\user\desktop\coralvm\src\literal.cpp
+1514660088 source:c:\users\user\desktop\coralvm\src\literal.cpp
 	"Literal.h"
 	<string>
 
-1511709592 source:c:\users\user\desktop\coralvm\src\double.cpp
+1514659444 source:c:\users\user\desktop\coralvm\src\double.cpp
 	"Double.h"
 
-1511747937 c:\users\user\desktop\coralvm\include\double.h
+1514659444 c:\users\user\desktop\coralvm\include\double.h
 	"Decimal.h"
 
-1511660181 source:c:\users\user\desktop\coralvm\src\reference.cpp
+1514648862 source:c:\users\user\desktop\coralvm\src\reference.cpp
 	"Reference.h"
 	"Class.h"
 
-1511660181 c:\users\user\desktop\coralvm\include\reference.h
+1514667808 c:\users\user\desktop\coralvm\include\reference.h
 	<string>
 	"symbol.h"
 	"Numeric.h"
 	"Class.h"
 
-1513550265 source:c:\users\user\desktop\coralvm\src\class.cpp
+1514649952 source:c:\users\user\desktop\coralvm\src\class.cpp
 	"Class.h"
 
-1513454054 c:\users\user\desktop\coralvm\include\class.h
+1514647979 c:\users\user\desktop\coralvm\include\class.h
 	<Accessible.h>
 	<Object.h>
 
-1511665658 c:\users\user\desktop\coralvm\include\object.h
+1514653657 c:\users\user\desktop\coralvm\include\object.h
 	<symbol.h>
-	<Class.h>
 
-1511665862 source:c:\users\user\desktop\coralvm\src\object.cpp
+1514650091 source:c:\users\user\desktop\coralvm\src\object.cpp
 	"Object.h"
 
 1509151908 c:\users\user\desktop\coralvm\/src\vs_stack.cpp
@@ -91,57 +90,60 @@
 	"vs_stack.h"
 	"Code.h"
 
-1510713177 c:\users\user\desktop\coralvm\include\decimal.h
+1514657568 c:\users\user\desktop\coralvm\include\decimal.h
 	<Numeric.h>
 
 1510712838 c:\users\user\desktop\coralvm\include\numeric.h
 	<Primitive.h>
 
-1510712838 c:\users\user\desktop\coralvm\include\primitive.h
+1514657291 c:\users\user\desktop\coralvm\include\primitive.h
 	<Data_Type.h>
 
-1511747937 c:\users\user\desktop\coralvm\include\data_type.h
+1514657447 c:\users\user\desktop\coralvm\include\data_type.h
 	<symbol.h>
+	<Object.h>
 
-1511128708 c:\users\user\desktop\coralvm\include\int.h
+1514659444 c:\users\user\desktop\coralvm\include\int.h
 	<Integer.h>
 
-1510712838 source:c:\users\user\desktop\coralvm\src\data_type.cpp
+1514657447 source:c:\users\user\desktop\coralvm\src\data_type.cpp
 	"Data_Type.h"
 
-1510712838 source:c:\users\user\desktop\coralvm\src\decimal.cpp
+1514657568 source:c:\users\user\desktop\coralvm\src\decimal.cpp
 	"Decimal.h"
 
-1511128739 source:c:\users\user\desktop\coralvm\src\int.cpp
+1514649951 source:c:\users\user\desktop\coralvm\src\int.cpp
 	"Int.h"
 
-1510712838 source:c:\users\user\desktop\coralvm\src\numeric.cpp
+1514657380 source:c:\users\user\desktop\coralvm\src\numeric.cpp
 	"Numeric.h"
 
-1510712838 source:c:\users\user\desktop\coralvm\src\primitive.cpp
+1514657291 source:c:\users\user\desktop\coralvm\src\primitive.cpp
 	"Primitive.h"
 
-1511056878 c:\users\user\desktop\coralvm\include\accessible.h
-	<symbol.h>
+1514648273 c:\users\user\desktop\coralvm\include\accessible.h
+	<iostream>
 
-1512669161 c:\users\user\desktop\coralvm\include\method.h
+1514648775 c:\users\user\desktop\coralvm\include\method.h
 	<Accessible.h>
 	<hashtable.h>
+	<Object.h>
 
-1512672580 c:\users\user\desktop\coralvm\include\field.h
+1514659507 c:\users\user\desktop\coralvm\include\field.h
 	<Accessible.h>
 	<Data_Type.h>
+	<Object.h>
 
-1513463978 source:c:\users\user\desktop\coralvm\src\accessible.cpp
+1514648168 source:c:\users\user\desktop\coralvm\src\accessible.cpp
 	"Accessible.h"
 
-1512672597 source:c:\users\user\desktop\coralvm\src\field.cpp
+1514659507 source:c:\users\user\desktop\coralvm\src\field.cpp
 	"Field.h"
 	"Int.h"
 	"Double.h"
 	"Reference.h"
 
-1511057695 source:c:\users\user\desktop\coralvm\src\method.cpp
+1514650336 source:c:\users\user\desktop\coralvm\src\method.cpp
 	"Method.h"
 
 1513454096 c:\users\user\desktop\coralvm\include\cvm.h
@@ -149,7 +151,7 @@
 	"vs_stack.h"
 	"Class.h"
 
-1513552833 source:c:\users\user\desktop\coralvm\src\cvm.cpp
+1514674424 source:c:\users\user\desktop\coralvm\src\cvm.cpp
 	"CVM.h"
 	<iostream>
 	<string>
@@ -165,6 +167,7 @@
 	"Field.h"
 	"Int.h"
 	"Double.h"
+	"Float.h"
 	"Literal.h"
 	"vs_stack.h"
 	"Code.h"
@@ -172,6 +175,9 @@
 	"hash_table.h"
 	"Class.h"
 	"Reference.h"
+	"Array.h"
+	"IntArray.h"
+	"ArrayReference.h"
 
 1513451947 source:c:\users\user\desktop\coralvm\src\system.cpp
 	"System.h"
@@ -196,4 +202,36 @@
 1513544768 c:\users\user\desktop\coralvm\include\memory_manager.h
 	"Object.h"
 	"Heap.h"
+
+1514659444 source:c:\users\user\desktop\coralvm\src\float.cpp
+	"Float.h"
+
+1514659444 c:\users\user\desktop\coralvm\include\float.h
+	"Decimal.h"
+
+1514645589 source:c:\users\user\desktop\coralvm\src\c_entity.cpp
+	"c_entity.h"
+
+1514645589 c:\users\user\desktop\coralvm\include\c_entity.h
+	"symbol.h"
+
+1514673951 source:c:\users\user\desktop\coralvm\src\array.cpp
+	"Array.h"
+
+1514671778 c:\users\user\desktop\coralvm\include\array.h
+	"Data_Type.h"
+
+1514667466 source:c:\users\user\desktop\coralvm\src\arrayreference.cpp
+	"ArrayReference.h"
+
+1514669509 c:\users\user\desktop\coralvm\include\arrayreference.h
+	"Reference.h"
+	"Array.h"
+
+1514667466 c:\users\user\desktop\coralvm\include\intarray.h
+	"Array.h"
+
+1514674120 source:c:\users\user\desktop\coralvm\src\intarray.cpp
+	"IntArray.h"
+	"Int.h"
 

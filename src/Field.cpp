@@ -3,12 +3,12 @@
 #include "Double.h"
 #include "Reference.h"
 
-Field::Field(std::string name, std::string ACC_FLAG , Data_Type* data): Accessible(name,ACC_FLAG){
+Field::Field(std::string name, std::string ACC_FLAG , Data_Type* data): Object(name),Accessible(ACC_FLAG){
 
     set_data(data);
 }
 
-Field::Field(Field* field):Accessible(field->getName(), field->get_acc()){
+Field::Field(Field* field):Object(field->getName()),Accessible(field->get_acc()){
 
 
 
@@ -31,10 +31,7 @@ Field::Field(Field* field):Accessible(field->getName(), field->get_acc()){
 
 }
 
-std::string Field::print(){
 
- return data->print();
-}
 Data_Type* Field::get_data(){
 
     return this->data;

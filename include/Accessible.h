@@ -1,15 +1,13 @@
 #ifndef ACCESSIBLE_H
 #define ACCESSIBLE_H
+#include <iostream>
 
-#include <symbol.h>
-
-
-class Accessible : public symbol
+class Accessible
 {
     public:
         Accessible();
-        Accessible(std::string name,std::string ACC_FLAG);
-        Accessible(std::string name,int ACC_FLAG);
+        Accessible(std::string ACC_FLAG);
+        Accessible(int ACC_FLAG);
         virtual ~Accessible();
         int get_acc();
         void set_acc(std::string name);

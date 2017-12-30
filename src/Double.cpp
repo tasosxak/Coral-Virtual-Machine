@@ -40,16 +40,17 @@ std::string Double::className(){
 
 }
 
-
+/*
 
 Double::Double(const std::string& name, double value):Decimal(name){
 
     this->value = value;
 
-}
+}*/
 
-std::string Double::print(){
+std::string Double::toString(){
 
  return std::to_string(value);
 
 }
+

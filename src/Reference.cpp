@@ -14,7 +14,7 @@ Reference::Reference(Reference* symb)
 }
 
 
-Reference::Reference(std::string name,Class* classdef, Object* obj):Numeric(name){
+Reference::Reference(std::string name,Class* classdef, Object* obj):Data_Type(name){
 
   this->pointer = obj;
   this->classRef = classdef;
@@ -29,7 +29,7 @@ std::string Reference::getName(){
 
 Class* Reference::getDynamicDef(){
 
-   return (this->pointer)->getClass();
+   return (Class*)(this->pointer)->getClass();
 
 }
 

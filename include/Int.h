@@ -8,15 +8,17 @@ class Int : public Integer
 {
     public:
         Int();
-        virtual ~Int();
         Int(int value);
         Int(Int* symb);
+
+        virtual ~Int();
        // Int(const std::string& name,int value);
 
         int getValue();
-        std::string className();
         void setValue(int value);
-        std::string print();
+
+        std::string toString();
+        std::string className();
 
     protected:
 

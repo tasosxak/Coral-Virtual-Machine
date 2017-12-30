@@ -38,7 +38,7 @@ std::string Int::className(){
     return "Int";
 }
 
-std::string Int::print(){
+std::string Int::toString(){
 
  return std::to_string(value);
 

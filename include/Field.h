@@ -3,8 +3,9 @@
 
 #include <Accessible.h>
 #include <Data_Type.h>
+#include <Object.h>
 
-class Field : public Accessible
+class Field : public Accessible, public Object
 {
     public:
         Field(std::string name, std::string ACC_FLAG , Data_Type* data);
@@ -13,7 +14,7 @@ class Field : public Accessible
         virtual ~Field();
         Data_Type* get_data();
         void set_data(Data_Type* data);
-        std::string print();
+
     protected:
 
     private:

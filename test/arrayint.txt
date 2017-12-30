@@ -1,0 +1,35 @@
+
+; pr = new int[5];
+; pr[0] = 34;
+; pr[1] = 67;
+; print pr[0]+pr[1];
+
+I[ pr = NULL;
+
+V main();
+	iconst 5
+	newarray I
+	rstore pr
+	rload pr
+	iconst 0
+	iconst 34
+	iastore
+	rload pr
+	iconst 1
+	iconst 67
+	iastore
+	rload pr
+	iconst 0
+	iaload
+	rload pr
+	iconst 1
+	iaload
+	iadd
+	print
+	iconst 0	
+	iconst 0
+	ret
+
+
+invoke_static main
+pop

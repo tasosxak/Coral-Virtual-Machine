@@ -13,7 +13,7 @@ using namespace std;
 int main()
 {
 
-    CVM* cvm = new CVM("inheretance.txt");
+    CVM* cvm = new CVM("arrayint.txt");
 
     cvm->start();
 

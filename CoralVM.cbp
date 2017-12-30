@@ -44,6 +44,7 @@
 		<Unit filename="include/Decimal.h" />
 		<Unit filename="include/Double.h" />
 		<Unit filename="include/Field.h" />
+		<Unit filename="include/Float.h" />
 		<Unit filename="include/Heap.h" />
 		<Unit filename="include/Int.h" />
 		<Unit filename="include/Integer.h" />
@@ -55,6 +56,7 @@
 		<Unit filename="include/Primitive.h" />
 		<Unit filename="include/Reference.h" />
 		<Unit filename="include/System.h" />
+		<Unit filename="include/c_entity.h" />
 		<Unit filename="include/hash_table.h" />
 		<Unit filename="include/symbol.h" />
 		<Unit filename="include/vs_stack.h" />
@@ -68,6 +70,7 @@
 		<Unit filename="src/Decimal.cpp" />
 		<Unit filename="src/Double.cpp" />
 		<Unit filename="src/Field.cpp" />
+		<Unit filename="src/Float.cpp" />
 		<Unit filename="src/Heap.cpp" />
 		<Unit filename="src/Int.cpp" />
 		<Unit filename="src/Integer.cpp" />
@@ -79,6 +82,7 @@
 		<Unit filename="src/Primitive.cpp" />
 		<Unit filename="src/Reference.cpp" />
 		<Unit filename="src/System.cpp" />
+		<Unit filename="src/c_entity.cpp" />
 		<Unit filename="src/hash_table.cpp" />
 		<Unit filename="src/symbol.cpp" />
 		<Unit filename="src/vs_stack.cpp" />

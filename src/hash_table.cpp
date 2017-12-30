@@ -136,6 +136,7 @@ return this->name;
 symbol* hash_table::lookfor(std::string name)
 {
 
+
     int i;
     symbol *p;
 

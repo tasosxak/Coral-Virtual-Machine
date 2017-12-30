@@ -3,8 +3,9 @@
 
 #include <Accessible.h>
 #include <hashtable.h>
+#include <Object.h>
 
-class Method : public Accessible
+class Method : public Accessible, public Object
 {
     public:
         Method(std::string name,std::string ACC_FLAG, std::string RTYPE);

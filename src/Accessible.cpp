@@ -5,12 +5,12 @@ Accessible::Accessible()
     //ctor
 }
 
-Accessible:: Accessible(std::string name , std::string ACC_FLAG) : symbol(name)
+Accessible:: Accessible(std::string ACC_FLAG)
 {
     set_acc(ACC_FLAG);
 }
 
-Accessible:: Accessible(std::string name , int ACC_FLAG) : symbol(name)
+Accessible:: Accessible(int ACC_FLAG)
 {
     set_acc(ACC_FLAG);
 }

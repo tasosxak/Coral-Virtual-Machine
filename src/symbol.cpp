@@ -52,16 +52,6 @@ void symbol::setLine(int line){
 }
 
 
-std::string symbol::print(){
-    std::string str;
-    str.append(name);
-    str.append(" XA ");
-    str.append(std::to_string(linecode));
-    str.append("\n");
-    return str;
-
-}
-
 symbol::~symbol()
 {
 

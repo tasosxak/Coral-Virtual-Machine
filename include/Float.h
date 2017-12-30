@@ -7,14 +7,18 @@ class Float : public Decimal
 {
     public:
         Float();
-        virtual ~Float();
         Float(float value);
         Float(Float* symb);
-        Float(const std::string& name,float value);
-        std::string className();
+
+        virtual ~Float();
+
+        //Float(const std::string& name,float value);
+
         float getValue();
         void setValue(float value);
-        std::string print();
+
+        std::string toString();
+        std::string className();
 
     protected:
 

@@ -8,7 +8,7 @@ class Decimal : public Numeric
 {
     public:
         Decimal();
-        Decimal(std::string name);
+        //Decimal(std::string name);
         virtual ~Decimal();
         //std::string className();
 

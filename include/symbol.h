@@ -11,12 +11,16 @@ class symbol
         symbol();
         symbol(std::string name);
         symbol(symbol* symb);
+
         virtual ~symbol();
+
         std::string getName();
-        void setLine(int line);
         int getLine();
+
+        void setLine(int line);
+
         virtual std::string className();
-        virtual std::string print();
+        //virtual std::string print();
 
         symbol *NextSymbol;
         symbol *PrevSymbol;

@@ -12,13 +12,7 @@ Literal::~Literal()
 }
 
 
-Literal::Literal(const std::string& value){
-
-    this->value = value;
-
- }
-
-Literal::Literal(const std::string& name, const std::string& value):symbol(name){
+Literal::Literal(const std::string& value):Data_Type(){
 
     this->value =value;
 }
@@ -38,7 +32,7 @@ void Literal::setValue(const std::string& value){
    this->value = value;
 }
 
- std::string Literal::print(){
+ std::string Literal::toString(){
 
     return value;
  }
